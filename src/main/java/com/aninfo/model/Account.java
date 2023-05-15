@@ -14,8 +14,7 @@ public class Account {
 
     private Double balance;
 
-    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    @JsonManagedReference
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Transaction> transactions;
 
     public Account(){

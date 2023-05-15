@@ -53,6 +53,7 @@ public class AccountService {
         accountRepository.save(account);
 
         Transaction transaction = new Transaction(sum, Transaction.TransactionType.WITHDRAW);
+        transaction.setAccount(account);
         Transaction new_transaction = transactionService.createTransaction(transaction);
         account.addTransaction(new_transaction);
 
@@ -76,6 +77,7 @@ public class AccountService {
         accountRepository.save(account);
 
         Transaction transaction = new Transaction(sum, Transaction.TransactionType.DEPOSIT);
+        transaction.setAccount(account);
         Transaction new_transaction = transactionService.createTransaction(transaction);
         account.addTransaction(new_transaction);
 

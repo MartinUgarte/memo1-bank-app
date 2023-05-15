@@ -21,7 +21,7 @@ public class Transaction {
     private TransactionType type;
 
     @ManyToOne
-    @JsonBackReference
+    @JoinColumn(name = "cbu")
     private Account account;
 
     public Transaction(){
@@ -54,5 +54,9 @@ public class Transaction {
 
     public void setType(TransactionType type) {
         this.type = type;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 }
